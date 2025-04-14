@@ -18,8 +18,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 z-10 pt-32 pb-20">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 animate-fade-in">
-            <span>Reclaim your feed.</span><br />
-            <span className="gradient-text">Rethink your perspective.</span>
+            <span>Break the Bubble.</span><br />
+            <span className="gradient-text">Balance the Mind.</span>
           </h1>
           
           <p className="text-xl sm:text-2xl mb-8 text-gray-700 animate-fade-in animate-delay-200">
@@ -50,3 +50,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
