@@ -19,6 +19,26 @@ const ScoreCardSection = () => {
     { name: "Week 5", score: 72 },
   ];
 
+  // Chart configuration for colors and styles
+  const chartConfig = {
+    score: { 
+      label: "Score",
+      color: "#1EAEDB" 
+    },
+    progressive: {
+      label: "Progressive",
+      color: "#3498db"
+    },
+    conservative: {
+      label: "Conservative",
+      color: "#e74c3c"
+    },
+    neutral: {
+      label: "Neutral",
+      color: "#2ecc71"
+    }
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -34,24 +54,27 @@ const ScoreCardSection = () => {
           <Card className="p-6 shadow-lg">
             <h3 className="text-xl font-semibold mb-4">Your Content Distribution</h3>
             <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={pieData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={70}
-                    outerRadius={100}
-                    dataKey="value"
-                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                  >
-                    {pieData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.fill} />
-                    ))}
-                  </Pie>
-                  <Tooltip content={<ChartTooltipContent />} />
-                </PieChart>
-              </ResponsiveContainer>
+              <ChartContainer config={chartConfig}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={pieData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={70}
+                      outerRadius={100}
+                      dataKey="value"
+                      nameKey="name"
+                      label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                    >
+                      {pieData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                      ))}
+                    </Pie>
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </ChartContainer>
             </div>
             <div className="mt-4">
               <p className="text-gray-600">
@@ -69,18 +92,20 @@ const ScoreCardSection = () => {
               </div>
             </div>
             <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={barData}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip content={<ChartTooltipContent />} />
-                  <Bar dataKey="score" fill="#1EAEDB" />
-                </BarChart>
-              </ResponsiveContainer>
+              <ChartContainer config={chartConfig}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={barData}
+                    margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <ChartTooltip content={<ChartTooltipContent nameKey="name" />} />
+                    <Bar dataKey="score" fill="#1EAEDB" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </ChartContainer>
             </div>
             <div className="mt-4">
               <div className="flex items-center justify-between">
