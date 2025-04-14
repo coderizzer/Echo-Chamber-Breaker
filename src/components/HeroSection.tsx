@@ -21,7 +21,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/0d2db572-5676-4a08-8b6a-f5ccf07abf94.png" 
               alt="Echo Chamber Breaker Logo" 
-              className="h-24 md:h-32" 
+              className="h-24 md:h-32 opacity-85 mix-blend-multiply" 
             />
           </div>
           

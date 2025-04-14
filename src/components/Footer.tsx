@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/0d2db572-5676-4a08-8b6a-f5ccf07abf94.png" 
                 alt="Echo Chamber Breaker Logo" 
-                className="h-10" 
+                className="h-10 opacity-75 brightness-150" 
               />
               <h3 className="text-xl font-bold">ECHO CHAMBER BREAKER</h3>
             </div>
