@@ -1,7 +1,8 @@
 
-import { BarChart, PieChart } from "@/components/ui/chart";
+import { ChartContainer, ChartTooltipContent, ChartTooltip, ChartLegendContent, ChartLegend } from "@/components/ui/chart";
 import { Card } from "@/components/ui/card";
-import { ArrowUpRight, TrendingUp } from "lucide-react";
+import { ArrowUpRight, BarChart as BarChartIcon, PieChart as PieChartIcon, TrendingUp, Trophy } from "lucide-react";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell } from "recharts";
 
 const ScoreCardSection = () => {
   const pieData = [
@@ -33,14 +34,24 @@ const ScoreCardSection = () => {
           <Card className="p-6 shadow-lg">
             <h3 className="text-xl font-semibold mb-4">Your Content Distribution</h3>
             <div className="h-64">
-              <PieChart 
-                data={pieData}
-                innerRadius={70}
-                outerRadius={100}
-                cx="50%"
-                cy="50%"
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-              />
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={pieData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={70}
+                    outerRadius={100}
+                    dataKey="value"
+                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  >
+                    {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    ))}
+                  </Pie>
+                  <Tooltip content={<ChartTooltipContent />} />
+                </PieChart>
+              </ResponsiveContainer>
             </div>
             <div className="mt-4">
               <p className="text-gray-600">
@@ -58,14 +69,18 @@ const ScoreCardSection = () => {
               </div>
             </div>
             <div className="h-64">
-              <BarChart 
-                data={barData}
-                margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-                xAxisDataKey="name"
-                bars={[
-                  { dataKey: "score", fill: "#1EAEDB" }
-                ]}
-              />
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={barData}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip content={<ChartTooltipContent />} />
+                  <Bar dataKey="score" fill="#1EAEDB" />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
             <div className="mt-4">
               <div className="flex items-center justify-between">
