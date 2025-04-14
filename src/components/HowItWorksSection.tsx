@@ -16,7 +16,7 @@ const HowItWorksSection = () => {
     {
       icon: <MessageCircle className="h-8 w-8 text-wellbeing-accent" />,
       title: "Suggests Alternatives",
-      description: "Gently nudges you with suggestions: "Want a new take on this topic?" when detecting echo chamber patterns."
+      description: 'Gently nudges you with suggestions: "Want a new take on this topic?" when detecting echo chamber patterns.'
     },
     {
       icon: <GitBranch className="h-8 w-8 text-wellbeing-accent" />,
