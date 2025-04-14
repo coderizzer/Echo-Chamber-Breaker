@@ -1,4 +1,5 @@
-# Welcome to your Lovable project
+
+# ECHO CHAMBER BREAKER
 
 ## Project info
 
@@ -6,7 +7,7 @@
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
+There are several ways of editing your ECHO CHAMBER BREAKER application.
 
 **Use Lovable**
 

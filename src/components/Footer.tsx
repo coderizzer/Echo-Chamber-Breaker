@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
@@ -8,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">EchoBrk</h3>
+            <h3 className="text-xl font-bold mb-4">ECHO CHAMBER BREAKER</h3>
             <p className="text-gray-400">
               Breaking the echo chamber, one perspective at a time.
             </p>
@@ -63,7 +62,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Echo Chamber Breaker. All rights reserved.
+            © {new Date().getFullYear()} ECHO CHAMBER BREAKER. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm">Privacy</a>

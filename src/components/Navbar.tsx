@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center">
-                <span className="text-xl font-bold text-wellbeing-accent">EchoBrk</span>
+                <span className="text-xl font-bold text-wellbeing-accent">ECHO CHAMBER BREAKER</span>
               </a>
             </div>
           </div>
