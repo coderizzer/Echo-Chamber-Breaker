@@ -1,5 +1,5 @@
 
-import { ArrowRight, Brain, Target } from "lucide-react";
+import { ArrowRight, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -17,6 +17,14 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-6 z-10 pt-32 pb-20">
         <div className="max-w-3xl mx-auto text-center">
+          <div className="flex justify-center mb-8 animate-fade-in">
+            <img 
+              src="/lovable-uploads/0d2db572-5676-4a08-8b6a-f5ccf07abf94.png" 
+              alt="Echo Chamber Breaker Logo" 
+              className="h-24 md:h-32" 
+            />
+          </div>
+          
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 animate-fade-in">
             <span>Break the Bubble.</span><br />
             <span className="gradient-text">Balance the Mind.</span>
@@ -50,4 +58,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

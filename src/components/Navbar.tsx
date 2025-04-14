@@ -17,7 +17,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <a href="#" className="flex items-center">
+              <a href="#" className="flex items-center gap-2">
+                <img 
+                  src="/lovable-uploads/0d2db572-5676-4a08-8b6a-f5ccf07abf94.png" 
+                  alt="Echo Chamber Breaker Logo" 
+                  className="h-10" 
+                />
                 <span className="text-xl font-bold text-wellbeing-accent">ECHO CHAMBER BREAKER</span>
               </a>
             </div>
